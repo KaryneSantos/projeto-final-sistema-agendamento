@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClinMED | Cadastrar paciente</title>
+    <title>ClinMED | Cadastrar médico</title>
+    <link rel="stylesheet" href="/css/cadastroPac.css">
 </head>
 <body>
-    <h1>Cadastro Paciente</h1>
+    <div class="container">
+        <div class="form-container">
+            <h1>Cadastro Paciente</h1>
+            <form action="/cadastro" method="POST">
+                <input type="text" name="nome" placeholder="Digite seu nome completo" required>
+                <input type="email" name="email" placeholder="Digite seu email" required>
+                <input type="text" name="cpf" placeholder="CPF" required>
+                <input type="date" name="datadenascimento" placeholder="Digite sua data de nascimento" required>
+                <select name="tipo_usuario" required>
+                    <option value="paciente">Paciente</option>
+                    <option value="medico">Médico</option>
+                </select>
+                <select name="sexo" required>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="outro">Outro</option>
+                </select>
+                <label for="">Senha:</label>
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
+                <input type="password" name="confirmacao_senha" placeholder="Confirme sua senha" required>
+                <button type="submit">CADASTRAR</button>
+                <a class="login-link" href="/login">Já tem uma conta? Faça Login</a>
+            </form>
+        </div>
+        <div class="info-container">
+            <div>
+                <img src="/img/paciente-medico.png">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

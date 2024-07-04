@@ -69,17 +69,23 @@
     transform: translateY(-18%);
 }
 
-/* .circle-right {
-    width: 500px;
-    height: 500px;
-    top: 50%;
-    right: -100px;
-} */
-
 .content-section img {
     height: 400px;
     width: auto;
     position: absolute;
     right: 60px;
     top: 0;
+}
+
+.text-content-espec {
+    margin-top: 350px;
+    margin-left: 50px;
+}
+
+.text-content-espec p{
+    font-size: 18px;
+}
+
+.text-content-espec h1{
+    font-size: 40px;
 }
