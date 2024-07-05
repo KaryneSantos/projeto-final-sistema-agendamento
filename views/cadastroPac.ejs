@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClinMED | Cadastrar médico</title>
+    <title>ClinMED | Cadastrar paciente</title>
     <link rel="stylesheet" href="/css/cadastroPac.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
                 <input type="email" name="email" placeholder="Digite seu email" required>
                 <input type="text" name="cpf" placeholder="CPF" required>
                 <input type="date" name="datadenascimento" placeholder="Digite sua data de nascimento" required>
-                <select name="tipo_usuario" required>
+                <select name="tipo_usuario" id="tipo_usuario" required>
                     <option value="paciente">Paciente</option>
                     <option value="medico">Médico</option>
                 </select>
@@ -24,7 +24,6 @@
                     <option value="masculino">Masculino</option>
                     <option value="outro">Outro</option>
                 </select>
-                <label for="">Senha:</label>
                 <input type="password" name="senha" placeholder="Digite sua senha" required>
                 <input type="password" name="confirmacao_senha" placeholder="Confirme sua senha" required>
                 <button type="submit">CADASTRAR</button>
@@ -37,5 +36,7 @@
             </div>
         </div>
     </div>
+
+    <script src="/js/cadastroPac.js"></script>
 </body>
 </html>
