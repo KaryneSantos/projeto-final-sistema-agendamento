@@ -1,0 +1,84 @@
+.navbar-nav a{
+    font-size: 22px;
+}
+.navbar-brand img {
+    height: 40px;
+}
+.navbar-nav {
+    margin-left: auto; 
+    justify-content: center;
+    align-items: center;
+}
+.nav-item {
+    margin-right: 35px; 
+}
+.btn-cadastrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: #64B6C9;
+    border-radius: 50px;
+    width: 150px;
+    height: 60px;
+    text-align: center;
+}
+
+.btn-cadastrar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cont-container{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    color: #64B6C9;
+}
+
+.cont-container label{
+    margin: 15px;
+}
+
+.map-container{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+  }
+  .map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+
+  .container-footer h2{
+    font-family: 'Acme', sans-serif;
+    font-family: 'Mooli', sans-serif;
+}
+
+.btn-custom-orange{
+    background-color: #82CDDF;
+    color: white;   
+    margin: 25px;
+    padding: 10px;
+    border: #82CDDF;
+}
+
+.btn-custom-orange:hover{
+    background-color: #64B6C9;
+}
+
+.btn-custom-orange:active{
+    box-shadow: 0 0 10px #64B6C9;
+}
+
+.links-footer a{
+    text-decoration: none;
+    color: black;
+}

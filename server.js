@@ -19,6 +19,10 @@ app.use('/agendamento-pagina-inicial', agendamentoPagina);
 const contatoPagina = require('./routers/contato');
 app.use('/contato', contatoPagina);
 
+// Página de Pergunta Registro (Médico/Paciente)
+const perguntaRegistros = require('./routers/perguntaReg');
+app.use('/pergunta-registro', perguntaRegistros);
+
 // Página de Cadastro (Médico)
 const cadastroMedico = require('./routers/cadastro-medico');
 app.use('/cadastro-medico', cadastroMedico);

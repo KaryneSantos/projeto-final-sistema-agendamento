@@ -1,141 +1,32 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
+.navbar-nav a{
+    font-size: 22px;
+}
+.navbar-brand img {
+    height: 40px;
+}
+.navbar-nav {
+    margin-left: auto; 
+    justify-content: center;
+    align-items: center;
+}
+.nav-item {
+    margin-right: 35px; 
+}
+.btn-cadastrar {
     display: flex;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
-.sidebar {
-    width: 250px;
-    background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.sidebar .logo {
-    text-align: center;
-    padding: 20px;
-}
-
-.sidebar .logo img {
-    width: 50px;
-    height: 50px;
-}
-
-.sidebar nav ul {
-    list-style: none;
+    justify-content: center;
+    align-items: center;
     padding: 0;
-}
-
-.sidebar nav ul li {
+    background-color: #64B6C9;
+    border-radius: 50px;
+    width: 150px;
+    height: 60px;
     text-align: center;
-    margin: 10px 0;
 }
 
-.sidebar nav ul li a {
+.btn-cadastrar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
-    color: #000000;
-    display: block;
-    padding: 10px;
-}
-
-.sidebar nav ul li.active a {
-    background-color: #66b2b2;
-    color: #ffffff;
-    border-radius: 5px;
-}
-
-.main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    background-color: #66b2b2;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #ffffff;
-}
-
-header .user-info {
-    display: flex;
-    align-items: center;
-}
-
-header .user-info img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-main {
-    padding: 20px;
-}
-
-.cards {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.card {
-    background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    width: 30%;
-}
-
-.card .icon {
-    margin-right: 20px;
-}
-
-.card .icon img {
-    width: 40px;
-    height: 40px;
-}
-
-.card .details {
-    text-align: left;
-}
-
-.recent-patients,
-.waiting-room {
-    background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.recent-patients ul {
-    list-style: none;
-    padding: 0;
-}
-
-.recent-patients ul li {
-    margin: 10px 0;
-}
-
-.waiting-room .waiting-count {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.waiting-room .waiting-count h4 {
-    font-size: 40px;
-    margin: 0;
-}
-
-.waiting-room .waiting-count p {
-    margin: 0;
 }

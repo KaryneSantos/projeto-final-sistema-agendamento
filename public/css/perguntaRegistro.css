@@ -1,0 +1,13 @@
+.card {
+    text-align: center;
+    margin-top: 50px; 
+}
+.card-body img {
+    max-width: 300px;
+    height: auto;
+}
+
+.title {
+    color: black;
+    text-decoration: none;
+}
