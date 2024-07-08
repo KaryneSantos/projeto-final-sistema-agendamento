@@ -5,11 +5,6 @@ const connection = mysql.createConnection({
     user: 'karyne',
     password: 'sistemaclinico123',
     database: 'sistema-clinica'
-
-    // host: process.env.BCDD_HOST,
-    // user: process.env.BCDD_USER,
-    // password: process.env.BCDD_PASSWORD,
-    // database: process.env.BCDD_DATABASE
 });
 
 connection.connect(err => {

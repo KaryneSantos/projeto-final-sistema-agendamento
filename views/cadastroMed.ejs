@@ -11,16 +11,22 @@
         <div class="form-container">
             <h1>Cadastro Médico</h1>
             <form action="/cadastrar" method="POST">
-                <input type="text" name="nome" placeholder="Digite seu nome completo" required>
+                <input type="text" name="nome_completo" placeholder="Digite seu nome completo" required>
                 <input type="email" name="email" placeholder="Digite seu email" required>
                 <input type="text" name="cpf" placeholder="CPF" required>
+                <input type="date" name="data_nascimento" placeholder="Digite sua data de nascimento" required>
                 <input type="text" name="crm" placeholder="CRM" required>
                 <select name="tipo_usuario" id="tipo_usuario" required>
                     <option value="medico">Médico</option>
                 </select>
+                <select name="sexo" required>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="outro">Outro</option>
+                </select>
                 <input type="password" name="senha" placeholder="Digite sua senha" required>
                 <input type="password" name="confirmacao_senha" placeholder="Confirme sua senha" required>
-                <button type="submit">CADASTRAR</button>
+                <button type="button">CADASTRAR</button>
                 <a class="login-link" href="/login">Já tem uma conta? Faça Login</a>
             </form>
         </div>

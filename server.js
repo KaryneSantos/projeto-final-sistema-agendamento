@@ -35,6 +35,14 @@ app.use('/cadastro-paciente', cadastroPaciente);
 const paginaLogin = require('./routers/paginaLogin');
 app.use('/login', paginaLogin);
 
+// Página Inicial (Médico)
+const paginaInicialMedico = require('./routers/paginaInicialMed');
+app.use('/pagina-inicial-medico', paginaInicialMedico);
+
+// Página Inicial (Paciente)
+const paginaInicialPaciente = require('./routers/paginaInicialPac');
+app.use('/pagina-inicial-paciente', paginaInicialPaciente);
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 console.log(`O servidor está rodando na porta ${PORT}`);
