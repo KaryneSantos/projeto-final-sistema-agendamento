@@ -2,10 +2,23 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
+// Interação de Cookies e Sessões
+app.use(cookieParser());
+app.use(session({
+    secret: 'sua_chave_secreta_aqui',
+    resave: false,
+    saveUninitialized: false
+}));
+
 
 // Página Inicial (Clínica)
 const paginaInicial = require('./routers/index');

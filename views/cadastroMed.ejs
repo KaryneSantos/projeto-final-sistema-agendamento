@@ -10,7 +10,7 @@
     <div class="container">
         <div class="form-container">
             <h1>Cadastro Médico</h1>
-            <form action="/cadastrar" method="POST">
+            <form action="/cadastro-medico" method="POST">
                 <input type="text" name="nome_completo" placeholder="Digite seu nome completo" required>
                 <input type="email" name="email" placeholder="Digite seu email" required>
                 <input type="text" name="cpf" placeholder="CPF" required>
@@ -27,6 +27,11 @@
                 <input type="password" name="senha" placeholder="Digite sua senha" required>
                 <input type="password" name="confirmacao_senha" placeholder="Confirme sua senha" required>
                 <button type="button">CADASTRAR</button>
+                <% if (typeof error !== 'undefined' && error !== null) { %>
+                    <div class="m-2 " id="alerta">
+                      <%= error %>
+                    </div>
+                    <% } %>
                 <a class="login-link" href="/login">Já tem uma conta? Faça Login</a>
             </form>
         </div>

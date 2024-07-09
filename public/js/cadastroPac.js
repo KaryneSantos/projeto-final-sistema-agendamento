@@ -5,3 +5,4 @@ tipo_usuario.addEventListener('change', function() {
         window.location.href = '/cadastro-medico';
     }
 });
+
