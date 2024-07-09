@@ -56,6 +56,23 @@ app.use('/pagina-inicial-medico', paginaInicialMedico);
 const paginaInicialPaciente = require('./routers/paginaInicialPac');
 app.use('/pagina-inicial-paciente', paginaInicialPaciente);
 
+// Página de Logout 
+const paginaLogout = require('./routers/logout');
+app.use('/logout', paginaLogout);
+
+// Página de consultas (Médico)
+const paginaConsultaMedico = require('./routers/consultas-medico');
+app.use('/consulta-medico', paginaConsultaMedico);
+
+// Página de Lista de pacientes (Médico)
+const paginaListaPacientes = require('./routers/pag-lista-paciente');
+app.use('/lista-pacientes', paginaListaPacientes);
+
+// Página de Hórarios (Médico)
+const paginaHorarioMedico = require('./routers/horario-medico');
+app.use('/horario-medico', paginaHorarioMedico)
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 console.log(`O servidor está rodando na porta ${PORT}`);

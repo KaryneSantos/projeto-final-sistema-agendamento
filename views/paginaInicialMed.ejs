@@ -1,87 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClinMED | Agende sua consulta aqui!</title>
-    <link rel="stylesheet" href="/css/paginaInicialMed.css">
-</head>
-<body>
-    <div class="sidebar">
-        <div class="logo">
-            <img src="logo.png" alt="ClinMED">
-            <h2>ClinMED</h2>
-        </div>
-        <nav>
-            <ul>
-                <li class="active"><a href="#">Início</a></li>
-                <li><a href="#">Pacientes</a></li>
-                <li><a href="#">Agenda</a></li>
-                <li><a href="#">Consultas</a></li>
-                <li><a href="#">Sair</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="main-content">
-        <header>
-            <h1>Início</h1>
-            <div class="user-info">
-                <img src="doctor.png" alt="Dr. Souza">
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <title>ClinMED | Página Inicial</title>
+        <link rel="stylesheet" href="/css/paginaInicialPac.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    </head>
+    <body id="body-pd">
+        <div class="l-navbar" id="navbar">
+            <nav class="nav">
                 <div>
-                    <h4>Dr. Souza</h4>
-                    <p>Urologista</p>
+                    <div class="nav__brand">
+                        <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
+                        <a href="/pagina-inicial-medico" class="nav__logo">ClinMED</a>
+                    </div>
+                    <div class="nav__list">
+                        <a href="/pagina-inicial-medico" class="nav__link active">
+                            <ion-icon name="home-outline" class="nav__icon"></ion-icon>
+                            <span class="nav__name">Página Inicial</span>
+                        </a>
+                        <a href="/consulta-medico" class="nav__link">
+                            <span class="material-symbols-outlined">overview</span>
+                            <span class="nav__name">Minhas consultas</span>
+                        </a>
+
+                        <a href="/horario-medico" class="nav__link">
+                            <span class="material-symbols-outlined">clinical_notes</span>
+                            <span class="nav__name">Meus horários</span>
+                        </a>
+                        <a href="/lista-pacientes" class="nav__link">
+                            <span class="material-symbols-outlined">groups</span>
+                            <span class="nav__name">Meus pacientes</span>
+                        </a>
+                    </div>
                 </div>
+
+                <a href="/logout" class="nav__link">
+                    <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="container">
+            <h1>Meu consultório</h1>
+
+            <div class="dados-medico">
+                
             </div>
-        </header>
-        <main>
-            <h2>Meu Consultório</h2>
-            <div class="cards">
-                <div class="card">
-                    <div class="icon">
-                        <img src="user-icon.png" alt="Pacientes cadastrados">
-                    </div>
-                    <div class="details">
-                        <h3>5</h3>
-                        <p>Pacientes cadastrados</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="icon">
-                        <img src="calendar-icon.png" alt="Agendamentos">
-                    </div>
-                    <div class="details">
-                        <h3>0</h3>
-                        <p>Agendamento hoje</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="icon">
-                        <img src="consultation-icon.png" alt="Atendimentos">
-                    </div>
-                    <div class="details">
-                        <h3>0</h3>
-                        <p>Atendimento do dia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="recent-patients">
-                <h3>Pacientes recentes</h3>
-                <ul>
-                    <li>Carlos Alves Pinheiro</li>
-                    <li>Paula Maranhense da Silva</li>
-                    <li>Mauro de Souza</li>
-                    <li>Salomeu de Lima Freitas</li>
-                    <li>Catarina Fernanda de Souza</li>
-                </ul>
-            </div>
-            <div class="waiting-room">
-                <h3>Sala de Espera</h3>
-                <div class="waiting-count">
-                    <h4>2</h4>
-                    <p>Pacientes Aguardando</p>
-                </div>
-            </div>
-        </main>
-    </div>
-</body>
+        </div>
+
+
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        
+        <script src="/js/paginaInicialPac.js"></script>
+    </body>
 </html>
