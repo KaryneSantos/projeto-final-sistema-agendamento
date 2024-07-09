@@ -64,13 +64,13 @@ app.use('/logout', paginaLogout);
 const paginaConsultaMedico = require('./routers/consultas-medico');
 app.use('/consulta-medico', paginaConsultaMedico);
 
-// Página de Lista de pacientes (Médico)
-const paginaListaPacientes = require('./routers/pag-lista-paciente');
-app.use('/lista-pacientes', paginaListaPacientes);
+// // Página de Lista de pacientes (Médico)
+// const paginaListaPacientes = require('./routers/pag-lista-paciente');
+// app.use('/lista-pacientes', paginaListaPacientes);
 
-// Página de Hórarios (Médico)
-const paginaHorarioMedico = require('./routers/horario-medico');
-app.use('/horario-medico', paginaHorarioMedico)
+// // Página de Hórarios (Médico)
+// const paginaHorarioMedico = require('./routers/horario-medico');
+// app.use('/horario-medico', paginaHorarioMedico)
 
 
 const PORT = process.env.PORT || 3000;

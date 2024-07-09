@@ -53,9 +53,9 @@ router.post('/', (req, res) => {
         error.confirmacao_senha = 'Senhas diferentes, tente novamente';
     }
 
-    if (!crm || crm.length < 12) { // Verifica se o CRM do médico é vazio ou menor que 12 caracteres
-        error.crm = 'CRM inválido, tente novamente';
-    }
+    // if (!crm || crm.length < 12) { // Verifica se o CRM do médico é vazio ou menor que 12 caracteres
+    //     error.crm = 'CRM inválido, tente novamente';
+    // }
 
     // Se houver erros, retorna a página de cadastro com os erros
     if (Object.keys(error).length > 0) {
