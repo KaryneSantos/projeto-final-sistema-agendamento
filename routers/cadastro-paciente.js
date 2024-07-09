@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { validarCPF, validarDataNascimento } = require('../controllers/controller');
 const UsuarioDAO = require('../models/usuarioDAO');
+// const PacienteDAO = require('../models/pacienteDAO');
 
 router.get('/', (req, res) => {
     res.render('cadastroPac');
@@ -69,5 +70,19 @@ router.post('/', (req, res) => {
         res.redirect('pagina-inicial-paciente');
     });
 });
+
+
+    // Adicionando dados  no banco de dados usando DAO do paciente
+//     PacienteDAO.criarPaciente(nome_completo, cpf, data_nascimento, sexo, (err, result) => {
+//         if (err) {
+//             console.error('Erro ao cadastrar paciente:', err);
+//             return res.status(500).render('cadastroPac', { error: 'Erro ao cadastrar paciente.' });
+//         }
+//         console.log(result);
+//         console.log('Paciente cadastrado com sucesso.');
+//         res.redirect('pagina-inicial-paciente');
+//     });
+    
+ 
 
 module.exports = router;

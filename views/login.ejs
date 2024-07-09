@@ -11,26 +11,26 @@
         <div class="flex">
             <div class="lado1">
                 <h1>Bem Vindo de Volta!</h1>
-                <img src="/img/equipe-medica (1).png" alt="">
+                <img src="/img/equipe-medica (1).png" alt="Equipe Médica">
             </div>
 
             <div class="lado2">
-                <form action="">
-                    <label>Email:</label>
+                <form action="/login" method="POST">
+                    <label for="email">Email:</label>
                     <br>
-                    <input type="email">
-                    <br>
-                    <br>
-                    <label>Senha:</label>
-                    <br>
-                    <input type="password">
+                    <input type="email" id="email" name="email" required>
                     <br>
                     <br>
-                    <input type="checkbox">
-                    <label>Lembre-me</label>
+                    <label for="senha">Senha:</label>
+                    <br>
+                    <input type="password" id="senha" name="senha" required>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="lembrar">
+                    <label for="lembrar">Lembre-me</label>
                     <br> <br> <br>
 
-                    <button>Login</button>
+                    <button type="submit">Login</button>
                     <br> <br>
                     <a href="/pergunta-registro">Não tem cadastro? Cadastre-se</a>
                 </form>

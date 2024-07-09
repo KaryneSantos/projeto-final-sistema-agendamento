@@ -11,27 +11,57 @@
         <div class="form-container">
             <h1>Cadastro Médico</h1>
             <form action="/cadastro-medico" method="POST">
-                <input type="text" name="nome_completo" placeholder="Digite seu nome completo" required>
-                <input type="email" name="email" placeholder="Digite seu email" required>
-                <input type="text" name="cpf" placeholder="CPF" required>
-                <input type="date" name="data_nascimento" placeholder="Digite sua data de nascimento" required>
+                <input type="text" name="nome_completo" placeholder="Digite seu nome completo" value="<%= typeof nome_completo !== 'undefined' ? nome_completo : '' %>" required>
+                <% if (typeof error !== 'undefined' && error.nome_completo) { %>
+                    <div class="error-message"><%= error.nome_completo %></div>
+                <% } %>
+
+                <input type="email" name="email" placeholder="Digite seu email" value="<%= typeof email !== 'undefined' ? email : '' %>" required>
+                <% if (typeof error !== 'undefined' && error.email) { %>
+                    <div class="error-message"><%= error.email %></div>
+                <% } %>
+
+                <input type="text" name="cpf" placeholder="CPF" value="<%= typeof cpf !== 'undefined' ? cpf : '' %>" required>
+                <% if (typeof error !== 'undefined' && error.cpf) { %>
+                    <div class="error-message"><%= error.cpf %></div>
+                <% } %>
+
+                <input type="date" name="data_nascimento" placeholder="Digite sua data de nascimento" value="<%= typeof data_nascimento !== 'undefined' ? data_nascimento : '' %>" required>
+                <% if (typeof error !== 'undefined' && error.data_nascimento) { %>
+                    <div class="error-message"><%= error.data_nascimento %></div>
+                <% } %>
+
                 <input type="text" name="crm" placeholder="CRM" required>
+                <% if (typeof error !== 'undefined' && error.crm) { %>
+                    <div class="error-message"><%= error.crm %></div>
+                <% } %>
+
                 <select name="tipo_usuario" id="tipo_usuario" required>
                     <option value="medico">Médico</option>
                 </select>
+
                 <select name="sexo" required>
                     <option value="feminino">Feminino</option>
                     <option value="masculino">Masculino</option>
                     <option value="outro">Outro</option>
                 </select>
+
                 <input type="password" name="senha" placeholder="Digite sua senha" required>
                 <input type="password" name="confirmacao_senha" placeholder="Confirme sua senha" required>
-                <button type="button">CADASTRAR</button>
-                <% if (typeof error !== 'undefined' && error !== null) { %>
-                    <div class="m-2 " id="alerta">
-                      <%= error %>
-                    </div>
-                    <% } %>
+                
+                <% if (typeof error !== 'undefined' && error.senha) { %>
+                    <div class="error-message"><%= error.senha %></div>
+                <% } %>
+
+                <% if (typeof error !== 'undefined' && error.confirmacao_senha) { %>
+                    <div class="error-message"><%= error.confirmacao_senha %></div>
+                <% } %>
+
+                <% if (typeof error !== 'undefined' && error.error) { %>
+                    <div class="error-message"><%= error.error %></div>
+                <% } %>
+
+                <button type="submit">CADASTRAR</button>
                 <a class="login-link" href="/login">Já tem uma conta? Faça Login</a>
             </form>
         </div>

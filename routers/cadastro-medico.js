@@ -1,59 +1,77 @@
 const express = require('express');
 const router = express.Router();
-const connection = require('../models/db');
-const controllers = require('../controllers/controller');
+const { validarCPF, validarDataNascimento } = require('../controllers/controller');
+const UsuarioDAO = require('../models/usuarioDAO');
 
 router.get('/', (req, res) => {
     res.render('cadastroMed');
 });
 
 router.post('/', (req, res) => {
-    const {nome_completo, email, cpf, data_nascimento, crm, tipo_usuario, sexo, senha, confirmacao_senha} = req.body;
-    console.log('Colentando dados dos usuários.');
-    console.log(nome_completo); 
-    console.log(email);
-    console.log(cpf);
-    console.log(data_nascimento);
-    console.log(crm);
-    console.log(tipo_usuario);
-    console.log(sexo);
-    console.log(senha);
-    console.log(confirmacao_senha);
+    const { nome_completo, email, cpf, data_nascimento, crm, tipo_usuario, sexo, senha, confirmacao_senha } = req.body;
 
-    let error = null;
+    console.log('nome completo', nome_completo);
+    console.log('cpf', cpf);
+    console.log('email', email);
+    console.log('data nascimento', data_nascimento);
+    console.log('tipo usuario', tipo_usuario);
+    console.log('sexo', sexo);
+    console.log('senha', senha);
+    console.log('confirmacao de senha', confirmacao_senha);
 
+    let error = {};
 
-    // Verificação se os campos estão vazios
-    if(nome_completo === '' || email === '' || crm === '' || senha === '' || confirmacao_senha === ''){
-        console.log('campos obrigátorios não preenchidos');
-        error = 'Campos obrigátorios não preenchidos.';
+    // Verifica se os dados são preenchidos
+    if (nome_completo === '') {
+        error.nome_completo = 'Digite seu nome completo';
     }
 
-    // Verificação se o cpf é válido ou vazio
-    if(!controllers.validarCPF(cpf) || cpf === "") {
-        console.log('cpf inválido, tente novamente.');
-        error = 'CPF inválido, tente novamente';
+    if (email === '') {
+        error.email = 'Digite seu email';
     }
 
-    // Verificação se a Data de Nascimento é válido
-    if(controllers.validarDataNascimento(data_nascimento)){
-        console.log('data de nascimento inválida, tente novamente.');
-        error = 'Data de nascimento inválida, tente novamente.';
+    if (cpf === '') {
+        error.cpf = 'Digite seu CPF';
+    } else if (!validarCPF(cpf)) { // Verifica se o cpf é válido
+        error.cpf = 'CPF inválido, tente novamente';
     }
 
-    const usuariosSQL = `INSERT INTO usuario (email, nome_completo, tipo_de_usuario, data_nasc, senha) VALUES (?, ?, ?, ?, ?, ?)`;
-    connection.query(usuariosSQL, [email, nome_completo, tipo_usuario, data_nascimento, senha], (err, result) => {
-        if(err){
-            console.error('ERROR ao cadastrar usuário', error);
-            res.render('cadastroMed', {error: 'ERROR ao cadastrar usuário.'});
+    if (data_nascimento === '') {
+        error.data_nascimento = 'Digite sua data de nascimento';
+    } else if (!validarDataNascimento(data_nascimento)) { // Verifica se a data de nascimento é válida
+        error.data_nascimento = 'Data de nascimento inválida, tente novamente';
+    }
+
+    if (senha === '') {
+        error.senha = 'Digite sua senha';
+    }
+
+    if (confirmacao_senha === '') {
+        error.confirmacao_senha = 'Confirme sua senha';
+    } else if (confirmacao_senha !== senha) { // Verifica se as senhas são diferentes
+        error.confirmacao_senha = 'Senhas diferentes, tente novamente';
+    }
+
+    if (crm === '' || crm.length < 12) { // Verifica se o crm do médico é vazio ou menor que 12
+        error.crm = 'CRM inválido, tente novamente';
+    }
+    
+
+    // Se houver erros, retorna a página de cadastro com os erros
+    if (Object.keys(error).length > 0) {
+        return res.status(400).render('cadastroMed', { error, nome_completo, email, cpf, data_nascimento, senha, confirmacao_senha });
+    }
+
+    // Adicionando dados no banco de dados
+    UsuarioDAO.criarUsuario(email, nome_completo, tipo_usuario, data_nascimento, senha, (err, result) => {
+        if (err) {
+            console.error('Erro ao cadastrar usuário:', err);
+            return res.status(500).render('cadastroMed', { error: 'Erro ao cadastrar usuário.' });
         }
-
+        console.log(result);
         console.log('Usuário cadastrado com sucesso.');
-    })
-
-    // página inicial do médico
-    res.redirect('pagina-inicial-medico');
-
+        res.redirect('pagina-inicial-medico');
+    });
 });
 
 module.exports = router;

@@ -31,4 +31,5 @@ function validarDataNascimento(data) {
 }
 
 
+
 module.exports = {validarCPF, validarDataNascimento};
